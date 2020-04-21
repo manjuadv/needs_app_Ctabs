@@ -9,7 +9,11 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+
+import com.github.javiersantos.appupdater.AppUpdater;
+import com.github.javiersantos.appupdater.enums.UpdateFrom;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,15 +24,24 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.opn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openCustomTab("kathlk.online:1337/");
+                openCustomTab(getString(R.string.website_url));
             }
         });
         findViewById(R.id.opnChrm).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openInChrome("kathlk.online:1337/");
+                openInChrome(getString(R.string.website_url));
             }
         });
+
+        AppUpdater appUpdater = new AppUpdater(this);
+        appUpdater.setUpdateFrom(UpdateFrom.JSON)
+                .setUpdateJSON(getString(R.string.auto_update_file))
+                .start();
+
+        /*Handler handler = new Handler();
+        handler.postDelayed(new MyRunnable(appUpdater) {
+        }, 600000);*/
     }
 
     private void openCustomTab(String urlBase) {
@@ -71,3 +84,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+/*class MyRunnable implements Runnable {
+    private AppUpdater appUpdater;
+    public MyRunnable(AppUpdater _appUpdater) {
+        this.appUpdater = _appUpdater;
+    }
+    @Override
+    public void run() {
+        this.appUpdater.stop();
+    }
+}*/

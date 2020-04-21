@@ -19,13 +19,13 @@
         android:layout_width="0.0dip" android:layout_height="fill_parent"
         android:layout_weight="1.0"
         android:layout_centerInParent="true"
-        android:text="Launch App"
+        android:text="Kath App"
         android:id="@+id/opn"></Button>
     <Button
         android:layout_width="0.0dip" android:layout_height="fill_parent"
         android:layout_weight="1.0"
         android:layout_centerInParent="true"
-        android:text="Open Website"
+        android:text="Kath Website"
         android:id="@+id/opnChrm"></Button>
     </LinearLayout>
 

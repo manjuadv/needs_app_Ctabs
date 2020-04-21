@@ -1,0 +1,3 @@
+Auto update module
+---------------------
+https://github.com/javiersantos/AppUpdater

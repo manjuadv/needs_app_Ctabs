@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">needs custom tab</string>
+    <string name="app_name">Kath Android</string>
+    <string name="website_url">kathlk.online:1337/</string>
+    <string name="auto_update_file">http://kathlk.online:1337/downloads/update-changelog.json</string>
 </resources>
