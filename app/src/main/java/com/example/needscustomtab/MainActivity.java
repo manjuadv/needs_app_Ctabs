@@ -20,35 +20,35 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.opn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openCustomTab(getString(R.string.website_url));
+                openCustomTab(getString(R.string.website_url), -1.0, -1.0);
             }
         });
         findViewById(R.id.opnChrm).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openInChrome(getString(R.string.website_url));
+                openInChrome(getString(R.string.website_url), -1.0, -1.0);
             }
         });
     }
 
-    private void openCustomTab(String urlBase) {
+    private void openCustomTab(String urlBase, double longi, double lati) {
         boolean failed = false;
         String mobileEndPoint = "mapp";
         try {
-            String url = "http://" + urlBase + mobileEndPoint;
+            String url = "http://" + urlBase + mobileEndPoint + "?lon=" + String.valueOf(longi) + "&lat=" + String.valueOf(lati);;
             CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
             CustomTabsIntent customTabsIntent = builder.build();
             builder.setToolbarColor(Color.BLUE);
             customTabsIntent.launchUrl(this, Uri.parse(url));
         } catch (Exception e) {
             // If chrome custom tabs got error, launch app with Chrome
-            openInChrome(urlBase);
+            openInChrome(urlBase, -1.0, -1.0);
         }
     }
-    private void openInChrome(String urlBase) {
+    private void openInChrome(String urlBase, double longi, double lati) {
         try {
             String mobileWebEndPoint = "mweb";
-            String url = "http://" + urlBase + mobileWebEndPoint;
+            String url = "http://" + urlBase + mobileWebEndPoint + "?lon=" + String.valueOf(longi) + "&lat=" + String.valueOf(lati);
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             startActivity(browserIntent);
         } catch (Exception e) {
