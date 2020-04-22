@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.view.View;
 
 import com.github.javiersantos.appupdater.AppUpdater;
+import com.github.javiersantos.appupdater.enums.Display;
 import com.github.javiersantos.appupdater.enums.UpdateFrom;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         AppUpdater appUpdater = new AppUpdater(this);
         appUpdater.setUpdateFrom(UpdateFrom.JSON)
+                .setDisplay(Display.DIALOG)
                 .setUpdateJSON(getString(R.string.auto_update_file))
                 .start();
 
