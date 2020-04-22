@@ -20,13 +20,13 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.opn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openCustomTab("kathlk.online:1337/");
+                openCustomTab(getString(R.string.website_url));
             }
         });
         findViewById(R.id.opnChrm).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openInChrome("kathlk.online:1337/");
+                openInChrome(getString(R.string.website_url));
             }
         });
     }
