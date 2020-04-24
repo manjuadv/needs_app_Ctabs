@@ -76,7 +76,7 @@
             android:textAlignment="center"
             android:textColor="#A13D3D"
             android:textSize="20sp"
-            android:visibility="visible" />
+            android:visibility="invisible" />
     </LinearLayout>
 
 

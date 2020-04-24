@@ -17,6 +17,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -73,6 +74,14 @@ public class MainActivity extends AppCompatActivity {
         try {
             locReadWaitMsg = (TextView) findViewById(R.id.locReadWaitMsg);
             locReadWaitMsg.setVisibility(View.VISIBLE);
+            // ----------- just hide message after certain time
+            new Handler().postDelayed(new Runnable(){
+                public  void run() {
+                    locReadWaitMsg = (TextView) findViewById(R.id.locReadWaitMsg);
+                    locReadWaitMsg.setVisibility(View.INVISIBLE);
+                }
+            }, 7000);
+            // --------------------
             this.requestLocationUpdate();
         }catch (Exception e){
             locReadWaitMsg = (TextView) findViewById(R.id.locReadWaitMsg);
