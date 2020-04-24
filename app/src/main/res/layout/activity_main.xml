@@ -45,6 +45,40 @@
             android:layout_weight="1"
             android:background="@android:color/holo_blue_dark"
             android:text="Website"></Button>
+
+        <TextView
+            android:id="@+id/locLonTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="NONE"
+            android:textAlignment="center"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/locLatTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="NONE"
+            android:textAlignment="center"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/locReadWaitMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Please wait, location information is reading."
+            android:textAlignment="center"
+            android:textColor="#A13D3D"
+            android:textSize="20sp"
+            android:visibility="invisible" />
     </LinearLayout>
+
+
 
 </RelativeLayout>
