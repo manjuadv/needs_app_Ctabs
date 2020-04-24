@@ -4,7 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#4D49C4CA"
     tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="90dp"
+        android:background="#081140"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/logo_4ude25" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -13,23 +27,24 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/opn"
             android:layout_width="180dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:background="@android:color/holo_blue_light"
-            android:text="Kath App"
-            android:id="@+id/opn"></Button>
+            android:layout_weight="1"
+            android:background="#2E54B3"
+            android:text="Launch App"></Button>
+
         <Button
+            android:id="@+id/opnChrm"
             android:layout_width="180dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:layout_weight="1"
             android:background="@android:color/holo_blue_dark"
-            android:text="Kath Website"
-            android:id="@+id/opnChrm"></Button>
+            android:text="Website"></Button>
     </LinearLayout>
 
 </RelativeLayout>
