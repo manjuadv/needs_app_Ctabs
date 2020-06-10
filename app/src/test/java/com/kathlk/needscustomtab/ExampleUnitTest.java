@@ -1,4 +1,4 @@
-package com.example.needscustomtab;
+package com.kathlk.needscustomtab;
 
 import org.junit.Test;
 
